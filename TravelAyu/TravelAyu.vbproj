@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31E9B858-AD3A-458D-834A-09E351110160}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>TravelAyu.My.MyApplication</StartupObject>
+    <RootNamespace>TravelAyu</RootNamespace>
+    <AssemblyName>TravelAyu</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>TravelAyu.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>TravelAyu.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Visual Studio 2010\Projects\TravelAyu\Travel Ayu\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="akunForm.Designer.vb">
+      <DependentUpon>akunForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="akunForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dataTiketForm.Designer.vb">
+      <DependentUpon>dataTiketForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dataTiketForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editAkunPengguna.Designer.vb">
+      <DependentUpon>editAkunPengguna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editAkunPengguna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editJadwal.Designer.vb">
+      <DependentUpon>editJadwal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editJadwal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editMobil.Designer.vb">
+      <DependentUpon>editMobil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editMobil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editPenumpang.Designer.vb">
+      <DependentUpon>editPenumpang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editPenumpang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editSupir.Designer.vb">
+      <DependentUpon>editSupir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editSupir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editTarif.Designer.vb">
+      <DependentUpon>editTarif.vb</DependentUpon>
+    </Compile>
+    <Compile Include="editTarif.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="imgButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="jadwalForm.Designer.vb">
+      <DependentUpon>jadwalForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="jadwalForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="jadwalRpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jadwalRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="laporanJadwalViewer.Designer.vb">
+      <DependentUpon>laporanJadwalViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="laporanJadwalViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="laporanTiketViewer.Designer.vb">
+      <DependentUpon>laporanTiketViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="laporanTiketViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginForm.Designer.vb">
+      <DependentUpon>loginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="loginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.vb">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mobilForm.Designer.vb">
+      <DependentUpon>mobilForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mobilForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modul Database.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="penjualanTiketRpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>penjualanTiketRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="penumpangForm.Designer.vb">
+      <DependentUpon>penumpangForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="penumpangForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="penumpangReportView.Designer.vb">
+      <DependentUpon>penumpangReportView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="penumpangReportView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="penumpangRpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>penumpangRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="statistikForm.Designer.vb">
+      <DependentUpon>statistikForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="statistikForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supirForm.Designer.vb">
+      <DependentUpon>supirForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="supirForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tiketForm.Designer.vb">
+      <DependentUpon>tiketForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tiketForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tujuanForm.Designer.vb">
+      <DependentUpon>tujuanForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tujuanForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="akunForm.resx">
+      <DependentUpon>akunForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dataTiketForm.resx">
+      <DependentUpon>dataTiketForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editAkunPengguna.resx">
+      <DependentUpon>editAkunPengguna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editJadwal.resx">
+      <DependentUpon>editJadwal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editMobil.resx">
+      <DependentUpon>editMobil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editPenumpang.resx">
+      <DependentUpon>editPenumpang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editSupir.resx">
+      <DependentUpon>editSupir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editTarif.resx">
+      <DependentUpon>editTarif.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jadwalForm.resx">
+      <DependentUpon>jadwalForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jadwalRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>jadwalRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laporanJadwalViewer.resx">
+      <DependentUpon>laporanJadwalViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laporanTiketViewer.resx">
+      <DependentUpon>laporanTiketViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginForm.resx">
+      <DependentUpon>loginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mobilForm.resx">
+      <DependentUpon>mobilForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="penjualanTiketRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>penjualanTiketRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="penumpangForm.resx">
+      <DependentUpon>penumpangForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="penumpangReportView.resx">
+      <DependentUpon>penumpangReportView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="penumpangRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>penumpangRpt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="statistikForm.resx">
+      <DependentUpon>statistikForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supirForm.resx">
+      <DependentUpon>supirForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tiketForm.resx">
+      <DependentUpon>tiketForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tujuanForm.resx">
+      <DependentUpon>tujuanForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car seat map top view.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\databases.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mobil-untuk-travel-5-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rinse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seat full.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tickets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
