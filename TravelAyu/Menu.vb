@@ -2,8 +2,6 @@
 
 Public Class Menu
 
-
-
     Private Sub Menu_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not loged Then
             DatabaseToolStripMenuItem.Enabled = False
@@ -101,5 +99,9 @@ Public Class Menu
         Dim tik As dataTiketForm = New dataTiketForm
         tik.MdiParent = Me
         tik.Show()
+    End Sub
+
+    Private Sub Menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Application.Exit()
     End Sub
 End Class
