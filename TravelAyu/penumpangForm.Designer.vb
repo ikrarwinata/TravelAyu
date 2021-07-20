@@ -64,9 +64,10 @@ Partial Class penumpangForm
         '
         'ToolStripButton1
         '
+        Me.ToolStripButton1.Image = Global.TravelAyu.My.Resources.Resources.plus
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(80, 22)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(96, 22)
         Me.ToolStripButton1.Text = "Tambah Baru"
         '
         'ToolStripSeparator1
@@ -76,9 +77,10 @@ Partial Class penumpangForm
         '
         'ToolStripButton3
         '
+        Me.ToolStripButton3.Image = Global.TravelAyu.My.Resources.Resources.edit
         Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(39, 22)
+        Me.ToolStripButton3.Size = New System.Drawing.Size(55, 22)
         Me.ToolStripButton3.Text = "Ubah"
         '
         'ToolStripSeparator3
@@ -88,9 +90,10 @@ Partial Class penumpangForm
         '
         'ToolStripButton2
         '
+        Me.ToolStripButton2.Image = Global.TravelAyu.My.Resources.Resources.trash
         Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(113, 22)
+        Me.ToolStripButton2.Size = New System.Drawing.Size(129, 22)
         Me.ToolStripButton2.Text = "Hapus Data Terpilih"
         '
         'ToolStripSeparator2
@@ -101,9 +104,10 @@ Partial Class penumpangForm
         'ToolStripButton4
         '
         Me.ToolStripButton4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButton4.Image = Global.TravelAyu.My.Resources.Resources.b_search
         Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton4.Name = "ToolStripButton4"
-        Me.ToolStripButton4.Size = New System.Drawing.Size(32, 22)
+        Me.ToolStripButton4.Size = New System.Drawing.Size(48, 22)
         Me.ToolStripButton4.Text = "Cari"
         '
         'ToolStripTextBox1

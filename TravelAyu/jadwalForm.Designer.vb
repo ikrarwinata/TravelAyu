@@ -68,27 +68,28 @@ Partial Class jadwalForm
         'ToolStripDropDownButton1
         '
         Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TambahToolStripMenuItem, Me.UbahToolStripMenuItem, Me.HapusTerpilihToolStripMenuItem})
+        Me.ToolStripDropDownButton1.Image = Global.TravelAyu.My.Resources.Resources.rinse
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(44, 22)
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(60, 22)
         Me.ToolStripDropDownButton1.Text = "Data"
         '
         'TambahToolStripMenuItem
         '
         Me.TambahToolStripMenuItem.Name = "TambahToolStripMenuItem"
-        Me.TambahToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.TambahToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.TambahToolStripMenuItem.Text = "Tambah"
         '
         'UbahToolStripMenuItem
         '
         Me.UbahToolStripMenuItem.Name = "UbahToolStripMenuItem"
-        Me.UbahToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.UbahToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UbahToolStripMenuItem.Text = "Ubah"
         '
         'HapusTerpilihToolStripMenuItem
         '
         Me.HapusTerpilihToolStripMenuItem.Name = "HapusTerpilihToolStripMenuItem"
-        Me.HapusTerpilihToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.HapusTerpilihToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.HapusTerpilihToolStripMenuItem.Text = "Hapus Terpilih"
         '
         'ToolStripSeparator3
@@ -114,9 +115,10 @@ Partial Class jadwalForm
         'ToolStripDropDownButton2
         '
         Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UrutkanToolStripMenuItem, Me.BersihkanFilterToolStripMenuItem})
+        Me.ToolStripDropDownButton2.Image = Global.TravelAyu.My.Resources.Resources.filter
         Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
-        Me.ToolStripDropDownButton2.Size = New System.Drawing.Size(46, 22)
+        Me.ToolStripDropDownButton2.Size = New System.Drawing.Size(62, 22)
         Me.ToolStripDropDownButton2.Text = "Filter"
         '
         'UrutkanToolStripMenuItem
