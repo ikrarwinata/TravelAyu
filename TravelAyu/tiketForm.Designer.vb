@@ -27,6 +27,8 @@ Partial Class tiketForm
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.Label31 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
@@ -59,6 +61,10 @@ Partial Class tiketForm
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -81,6 +87,7 @@ Partial Class tiketForm
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -166,6 +173,8 @@ Partial Class tiketForm
         '
         Me.GroupBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox5.BackColor = System.Drawing.Color.AntiqueWhite
+        Me.GroupBox5.Controls.Add(Me.NumericUpDown2)
+        Me.GroupBox5.Controls.Add(Me.Label31)
         Me.GroupBox5.Controls.Add(Me.ComboBox1)
         Me.GroupBox5.Controls.Add(Me.Label6)
         Me.GroupBox5.Controls.Add(Me.TextBox4)
@@ -183,6 +192,26 @@ Partial Class tiketForm
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Penumpang"
         '
+        'NumericUpDown2
+        '
+        Me.NumericUpDown2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDown2.Increment = New Decimal(New Integer() {1000, 0, 0, 0})
+        Me.NumericUpDown2.Location = New System.Drawing.Point(136, 247)
+        Me.NumericUpDown2.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        Me.NumericUpDown2.Name = "NumericUpDown2"
+        Me.NumericUpDown2.Size = New System.Drawing.Size(160, 20)
+        Me.NumericUpDown2.TabIndex = 20
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(12, 249)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(118, 13)
+        Me.Label31.TabIndex = 19
+        Me.Label31.Text = "Total Berat Barang (Kg)"
+        '
         'ComboBox1
         '
         Me.ComboBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -198,7 +227,7 @@ Partial Class tiketForm
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 227)
+        Me.Label6.Location = New System.Drawing.Point(6, 191)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(46, 13)
         Me.Label6.TabIndex = 10
@@ -208,7 +237,7 @@ Partial Class tiketForm
         '
         Me.TextBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox4.Location = New System.Drawing.Point(6, 243)
+        Me.TextBox4.Location = New System.Drawing.Point(6, 207)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(290, 20)
         Me.TextBox4.TabIndex = 9
@@ -218,7 +247,7 @@ Partial Class tiketForm
         Me.GroupBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox6.Controls.Add(Me.TableLayoutPanel2)
-        Me.GroupBox6.Location = New System.Drawing.Point(6, 155)
+        Me.GroupBox6.Location = New System.Drawing.Point(6, 136)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(290, 49)
         Me.GroupBox6.TabIndex = 7
@@ -557,6 +586,10 @@ Partial Class tiketForm
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.BackColor = System.Drawing.Color.PowderBlue
+        Me.GroupBox2.Controls.Add(Me.Label27)
+        Me.GroupBox2.Controls.Add(Me.Label28)
+        Me.GroupBox2.Controls.Add(Me.Label29)
+        Me.GroupBox2.Controls.Add(Me.Label30)
         Me.GroupBox2.Controls.Add(Me.Label25)
         Me.GroupBox2.Controls.Add(Me.Label24)
         Me.GroupBox2.Controls.Add(Me.Label17)
@@ -574,6 +607,46 @@ Partial Class tiketForm
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detail"
+        '
+        'Label27
+        '
+        Me.Label27.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(239, 76)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(12, 13)
+        Me.Label27.TabIndex = 25
+        Me.Label27.Text = "/"
+        '
+        'Label28
+        '
+        Me.Label28.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label28.Location = New System.Drawing.Point(186, 74)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(50, 17)
+        Me.Label28.TabIndex = 24
+        Me.Label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label29
+        '
+        Me.Label29.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label29.Location = New System.Drawing.Point(253, 74)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(50, 17)
+        Me.Label29.TabIndex = 23
+        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label30
+        '
+        Me.Label30.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(183, 59)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(75, 13)
+        Me.Label30.TabIndex = 22
+        Me.Label30.Text = "Kapasitas (Kg)"
         '
         'Label25
         '
@@ -674,7 +747,7 @@ Partial Class tiketForm
         Me.Label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label11.Location = New System.Drawing.Point(9, 75)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(294, 17)
+        Me.Label11.Size = New System.Drawing.Size(159, 17)
         Me.Label11.TabIndex = 16
         '
         'Label12
@@ -702,9 +775,9 @@ Partial Class tiketForm
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(183, 16)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(53, 13)
+        Me.Label10.Size = New System.Drawing.Size(64, 13)
         Me.Label10.TabIndex = 13
-        Me.Label10.Text = "Kapasitas"
+        Me.Label10.Text = "Penumpang"
         '
         'Label8
         '
@@ -787,6 +860,7 @@ Partial Class tiketForm
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
@@ -865,4 +939,10 @@ Partial Class tiketForm
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripButton4 As ToolStripButton
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents Label31 As Label
 End Class

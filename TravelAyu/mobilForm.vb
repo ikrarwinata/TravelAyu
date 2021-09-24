@@ -47,7 +47,7 @@ Public Class mobilForm
         Try
             Dim es As editMobil = New editMobil
             es.MdiParent = Me.MdiParent
-            es.UbahData(dgv1.SelectedRows(dgv1.SelectedRows.Count - 1).Cells("Nomor Polisi").Value, AddressOf Me.BukaDatabase)
+            es.UbahData(dgv1.SelectedRows(0).Cells("Nomor Polisi").Value, AddressOf Me.BukaDatabase)
         Catch ex As Exception
 
         End Try

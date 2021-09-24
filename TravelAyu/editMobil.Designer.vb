@@ -62,6 +62,8 @@ Partial Class editMobil
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel6.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +92,8 @@ Partial Class editMobil
         Me.GroupBox2.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button2
@@ -586,11 +590,35 @@ Partial Class editMobil
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(166, 53)
         Me.TableLayoutPanel4.TabIndex = 1
         '
+        'GroupBox7
+        '
+        Me.GroupBox7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox7.Controls.Add(Me.NumericUpDown5)
+        Me.GroupBox7.Location = New System.Drawing.Point(349, 124)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(139, 40)
+        Me.GroupBox7.TabIndex = 15
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Kapasitas Berat (Kg)"
+        '
+        'NumericUpDown5
+        '
+        Me.NumericUpDown5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDown5.Location = New System.Drawing.Point(10, 19)
+        Me.NumericUpDown5.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        Me.NumericUpDown5.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown5.Name = "NumericUpDown5"
+        Me.NumericUpDown5.Size = New System.Drawing.Size(120, 20)
+        Me.NumericUpDown5.TabIndex = 0
+        Me.NumericUpDown5.Value = New Decimal(New Integer() {10, 0, 0, 0})
+        '
         'editMobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(500, 549)
+        Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox5)
@@ -629,6 +657,8 @@ Partial Class editMobil
         Me.GroupBox2.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.GroupBox7.ResumeLayout(False)
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -672,4 +702,6 @@ Partial Class editMobil
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents NumericUpDown5 As NumericUpDown
 End Class

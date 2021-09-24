@@ -83,6 +83,7 @@ Public Class tiketForm
                     Label24.Text = "0"
                     Label8.Text = .Item("nopol")
                     Label9.Text = (.Item("kursi_depan") + .Item("kursi_2") + .Item("kursi_3") + .Item("kursi_4"))
+                    Label29.Text = .Item("kapasitas")
                     Label11.Text = .Item("nama_mobil") & ", " & .Item("warna")
                     Label13.Text = .Item("NIK")
                     Label15.Text = .Item("nama")
@@ -96,6 +97,13 @@ Public Class tiketForm
                 End With
                 Perintah = New MySqlCommand("SELECT COUNT(seats) FROM kursi_tiket INNER JOIN tiket ON kursi_tiket.id_tiket=tiket.id WHERE tiket.tanggal='" & Date.Now.ToShortDateString & "' AND tiket.id_jadwal=" & dgv1.SelectedRows(0).Cells("ID").Value, Koneksi)
                 Label24.Text = Perintah.ExecuteScalar()
+                Try
+                    Perintah = New MySqlCommand("SELECT SUM(berat_barang) AS berat_barang FROM tiket WHERE tiket.tanggal='" & Date.Now.ToShortDateString & "' AND tiket.id_jadwal=" & dgv1.SelectedRows(0).Cells("ID").Value, Koneksi)
+                    Dim ix As Integer = Perintah.ExecuteScalar()
+                    Label28.Text = If(String.IsNullOrEmpty(ix), 0, ix)
+                Catch ex As Exception
+                    Label28.Text = 0
+                End Try
 
                 Dim ndt As DataTable = BukaTabel("kursi_tiket", "SELECT seats FROM kursi_tiket INNER JOIN tiket ON kursi_tiket.id_tiket=tiket.id WHERE tiket.tanggal='" & Date.Now.ToShortDateString & "' AND tiket.id_jadwal=" & dgv1.SelectedRows(0).Cells("ID").Value)
                 With ndt
@@ -161,6 +169,11 @@ Public Class tiketForm
             MessageBox.Show("Data masih kosong")
             Return False
         End If
+        If (NumericUpDown2.Value + Label28.Text) > Label29.Text Then
+            MessageBox.Show("Berat barang melebihi kapasitas mobil", "Kapasitas berbelih", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+
         Try
             Dim f As Long = NumericUpDown1.Value - (tarif * penumpang)
         Catch ex As Exception
@@ -223,7 +236,7 @@ Public Class tiketForm
             Perintah.ExecuteNonQuery()
         End If
 
-        Perintah = New MySqlCommand("INSERT INTO tiket (id, penumpang, id_jadwal, tanggal, timestamps, total, bayar) VALUES (" & id & ", '" & nik & "', '" & dgv1.SelectedRows(0).Cells("ID").Value & "', '" & Date.Now.ToShortDateString & "', '" & TimeToString(Now) & "', " & (tarif) & ", " & NumericUpDown1.Value & ")", Koneksi)
+        Perintah = New MySqlCommand("INSERT INTO tiket (id, penumpang, id_jadwal, tanggal, timestamps, total, bayar, berat_barang) VALUES (" & id & ", '" & nik & "', '" & dgv1.SelectedRows(0).Cells("ID").Value & "', '" & Date.Now.ToShortDateString & "', '" & TimeToString(Now) & "', " & (tarif) & ", " & NumericUpDown1.Value & ", " & NumericUpDown2.Value & ")", Koneksi)
         Perintah.ExecuteNonQuery()
         Return True
     End Function

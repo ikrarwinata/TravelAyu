@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 16, 2021 at 05:24 AM
+-- Generation Time: Sep 23, 2021 at 11:49 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `jadwal` (
   `mobil` varchar(8) NOT NULL,
   `indextanggal` int(4) NOT NULL DEFAULT '107',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jadwal`
@@ -53,7 +53,8 @@ INSERT INTO `jadwal` (`id`, `hari`, `jam`, `id_tujuan`, `mobil`, `indextanggal`)
 (11, 'Jumat', '11:00', 1, 'BH090WW', 511),
 (12, 'Jumat', '15:00', 5, '222', 515),
 (13, 'Minggu', '00:00', 3, '222', 700),
-(14, 'Minggu', '20:00', 1, 'BH090WW', 720);
+(14, 'Minggu', '20:00', 1, 'BH090WW', 720),
+(15, 'Kamis', '18:00', 3, 'BH0900WA', 418);
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `kursi_tiket` (
   `id_tiket` int(11) NOT NULL,
   `seats` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kursi_tiket`
@@ -76,8 +77,8 @@ CREATE TABLE IF NOT EXISTS `kursi_tiket` (
 INSERT INTO `kursi_tiket` (`id`, `id_tiket`, `seats`) VALUES
 (36, 4, 'R0;C1'),
 (35, 4, 'R0;C0'),
-(34, 3, 'R2;C2'),
-(33, 3, 'R1;C2'),
+(47, 10, 'R1;C0'),
+(46, 10, 'R0;C0'),
 (32, 2, 'R1;C1'),
 (31, 2, 'R1;C0'),
 (30, 1, 'R0;C1'),
@@ -86,7 +87,13 @@ INSERT INTO `kursi_tiket` (`id`, `id_tiket`, `seats`) VALUES
 (38, 5, 'R1;C1'),
 (39, 6, 'R1;C0'),
 (40, 6, 'R1;C1'),
-(41, 7, 'R0;C0');
+(41, 7, 'R0;C0'),
+(42, 8, 'R1;C0'),
+(43, 8, 'R1;C1'),
+(44, 9, 'R0;C0'),
+(45, 9, 'R0;C1'),
+(48, 10, 'R1;C1'),
+(49, 11, 'R2;C0');
 
 -- --------------------------------------------------------
 
@@ -104,6 +111,7 @@ CREATE TABLE IF NOT EXISTS `mobil` (
   `kursi_2` int(2) NOT NULL DEFAULT '0',
   `kursi_3` int(2) NOT NULL DEFAULT '0',
   `kursi_4` int(2) NOT NULL DEFAULT '0',
+  `kapasitas` float NOT NULL DEFAULT '10',
   PRIMARY KEY (`nopol`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -111,10 +119,10 @@ CREATE TABLE IF NOT EXISTS `mobil` (
 -- Dumping data for table `mobil`
 --
 
-INSERT INTO `mobil` (`nopol`, `nama_mobil`, `warna`, `NIK_supir`, `kursi_depan`, `kursi_2`, `kursi_3`, `kursi_4`) VALUES
-('BH0900WA', 'Avanza', 'Hitam', '0908909870', 1, 2, 3, 0),
-('BH090WW', 'mobil2', 'putih', '01923012930', 2, 2, 2, 3),
-('222', 'toyota', 'hitam', '3333', 2, 3, 3, 3);
+INSERT INTO `mobil` (`nopol`, `nama_mobil`, `warna`, `NIK_supir`, `kursi_depan`, `kursi_2`, `kursi_3`, `kursi_4`, `kapasitas`) VALUES
+('BH0900WA', 'Avanza', 'Hitam', '2343243', 1, 2, 3, 0, 48),
+('BH090WW', 'mobil2', 'putih', '01923012930', 2, 2, 2, 3, 20),
+('222', 'toyota', 'hitam', '3333', 2, 3, 3, 3, 25);
 
 -- --------------------------------------------------------
 
@@ -195,8 +203,7 @@ INSERT INTO `penumpang` (`NIK`, `nama`, `tempat_lahir`, `tanggal_lahir`, `jenis_
 ('090912090890', 'Penumpang1', 'jambi', '01/01/1997', 'Pria', 'mail@nail.com', '09090909'),
 ('0980890987', 'Penumpang baru', 'jambi', '01/01/1997', 'Pria', '-', '4564564'),
 ('243243', 'wewrre', 'jambi', '01/01/1997', 'Pria', 'qwewqe', '88778'),
-('213556547', 'byu', 'jambi', '21/01/1997', 'Wanita', 'wruyewyr7y', '5477547475'),
-('2222', 'bayu', 'kerinci', '01/01/1997', 'Pria', 'ddd', '55');
+('213556547', 'byu', 'jambi', '21/01/1997', 'Wanita', 'wruyewyr7y', '5477547475');
 
 -- --------------------------------------------------------
 
@@ -219,7 +226,8 @@ CREATE TABLE IF NOT EXISTS `supir` (
 INSERT INTO `supir` (`NIK`, `nama`, `hp`) VALUES
 ('01923012930', 'Supir baru', '909090090'),
 ('2343243', 'sopir2', '234324'),
-('3333', 'anton', '2222');
+('3333', 'anton', '2222'),
+('111', 'bayu', '0000');
 
 -- --------------------------------------------------------
 
@@ -260,6 +268,8 @@ CREATE TABLE IF NOT EXISTS `tiket` (
   `timestamps` varchar(100) NOT NULL,
   `total` float NOT NULL DEFAULT '0',
   `bayar` float NOT NULL DEFAULT '0',
+  `dibatalkan` tinyint(1) NOT NULL DEFAULT '0',
+  `berat_barang` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -267,14 +277,17 @@ CREATE TABLE IF NOT EXISTS `tiket` (
 -- Dumping data for table `tiket`
 --
 
-INSERT INTO `tiket` (`id`, `penumpang`, `id_jadwal`, `tanggal`, `timestamps`, `total`, `bayar`) VALUES
-(4, '243243', 14, '18/07/2021', '1626634417959', 100000, 200000),
-(3, '213556547', 13, '18/07/2021', '1626634122022', 180000, 100000),
-(2, '0980890987', 13, '18/07/2021', '1626633932733', 180000, 150000),
-(1, '2222', 13, '18/07/2021', '1626633520067', 180000, 360000),
-(5, '2222', 6, '19/07/2021', '1626725541604', 150000, 300000),
-(6, '213556547', 8, '21/07/2021', '1626875475501', 100000, 100000),
-(7, '213556547', 8, '21/07/2021', '1626875514573', 100000, 100000);
+INSERT INTO `tiket` (`id`, `penumpang`, `id_jadwal`, `tanggal`, `timestamps`, `total`, `bayar`, `dibatalkan`, `berat_barang`) VALUES
+(4, '243243', 14, '18/07/2021', '1626634417959', 100000, 200000, 1, 0),
+(2, '0980890987', 13, '18/07/2021', '1626633932733', 180000, 360000, 0, 0),
+(1, '2222', 13, '18/07/2021', '1626633520067', 180000, 360000, 0, 0),
+(5, '2222', 6, '19/07/2021', '1626725541604', 150000, 300000, 0, 0),
+(6, '213556547', 8, '21/07/2021', '1626875475501', 100000, 100000, 0, 0),
+(7, '213556547', 8, '21/07/2021', '1626875514573', 100000, 100000, 0, 0),
+(8, '213556547', 7, '24/08/2021', '1629798996111', 100000, 200000, 0, 0),
+(9, '2222', 7, '21/09/2021', '1632230672660', 100000, 200000, 0, 0),
+(10, '213556547', 15, '23/09/2021', '1632422633266', 180000, 550000, 0, 0),
+(11, '213556547', 15, '23/09/2021', '1632422770048', 180000, 1000, 0, 12);
 
 -- --------------------------------------------------------
 
@@ -303,7 +316,7 @@ CREATE TABLE IF NOT EXISTS `tiket_view` (
 DROP TABLE IF EXISTS `penjualan_tiket_view`;
 
 DROP VIEW IF EXISTS `penjualan_tiket_view`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `penjualan_tiket_view`  AS  select `a`.`id` AS `id_tiket`,`a`.`penumpang` AS `NIK_penumpang`,`a`.`tanggal` AS `tanggal`,`a`.`timestamps` AS `timestamps`,`c`.`ID` AS `ID`,`c`.`Hari` AS `Hari`,`c`.`Jam` AS `Jam`,`c`.`Tujuan` AS `Tujuan`,`c`.`Mobil` AS `Mobil`,`c`.`Nomor Polisi` AS `NomorPolisi`,`c`.`Kapasitas` AS `Kapasitas`,`c`.`NIK Supir` AS `NIK Supir`,`c`.`Supir` AS `Supir`,count(`b`.`seats`) AS `TotalPenumpang`,sum(`a`.`total`) AS `Total`,`a`.`bayar` AS `TerBayar`,if((`a`.`bayar` >= sum(`a`.`total`)),'LUNAS','BELUM LUNAS') AS `Status` from ((`tiket` `a` left join `kursi_tiket` `b` on((`a`.`id` = `b`.`id_tiket`))) left join `tiket_view` `c` on((`a`.`id_jadwal` = `c`.`ID`))) group by `a`.`id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `penjualan_tiket_view`  AS  select `a`.`id` AS `id_tiket`,`a`.`penumpang` AS `NIK_penumpang`,`a`.`tanggal` AS `tanggal`,`a`.`timestamps` AS `timestamps`,`c`.`ID` AS `ID`,`c`.`Hari` AS `Hari`,`c`.`Jam` AS `Jam`,`c`.`Tujuan` AS `Tujuan`,`c`.`Mobil` AS `Mobil`,`c`.`Nomor Polisi` AS `NomorPolisi`,`c`.`Kapasitas` AS `Kapasitas`,`c`.`NIK Supir` AS `NIK Supir`,`c`.`Supir` AS `Supir`,count(`b`.`seats`) AS `TotalPenumpang`,sum(`a`.`total`) AS `Total`,`a`.`bayar` AS `TerBayar`,if((`a`.`dibatalkan` = 1),'DIBATALKAN',if((`a`.`bayar` >= sum(`a`.`total`)),'LUNAS','BELUM LUNAS')) AS `Status` from ((`tiket` `a` left join `kursi_tiket` `b` on((`a`.`id` = `b`.`id_tiket`))) left join `tiket_view` `c` on((`a`.`id_jadwal` = `c`.`ID`))) group by `a`.`id` ;
 
 -- --------------------------------------------------------
 

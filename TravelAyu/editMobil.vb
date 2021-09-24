@@ -24,9 +24,15 @@ Public Class editMobil
             TextBox2.Text = .Item("nopol")
             TextBox3.Text = .Item("nama_mobil")
             TextBox4.Text = .Item("warna")
-            ComboBox1.SelectedItem = .Item("NIK_supir")
-            Label5.Text = .Item("nama")
+            Try
+
+                ComboBox1.SelectedItem = .Item("NIK_supir")
+                Label5.Text = .Item("nama")
+            Catch ex As Exception
+
+            End Try
             NumericUpDown1.Value = .Item("kursi_depan")
+            NumericUpDown5.Value = .Item("kapasitas")
             SetSeat(NumericUpDown1.Value, TableLayoutPanel3)
 
             NumericUpDown2.Value = .Item("kursi_2")
@@ -143,7 +149,7 @@ Public Class editMobil
                 Exit Sub
             End If
 
-            Perintah = New MySqlCommand("INSERT INTO mobil (nopol, nama_mobil, warna, NIK_supir, kursi_depan, kursi_2, kursi_3, kursi_4) VALUES ('" & TextBox2.Text & "', '" & TextBox3.Text & "', '" & TextBox4.Text & "', '" & ComboBox1.SelectedItem & "', " & NumericUpDown1.Value & ", " & NumericUpDown2.Value & ", " & NumericUpDown3.Value & ", " & NumericUpDown4.Value & ")", Koneksi)
+            Perintah = New MySqlCommand("INSERT INTO mobil (nopol, nama_mobil, warna, NIK_supir, kursi_depan, kursi_2, kursi_3, kursi_4, kapasitas) VALUES ('" & TextBox2.Text & "', '" & TextBox3.Text & "', '" & TextBox4.Text & "', '" & ComboBox1.SelectedItem & "', " & NumericUpDown1.Value & ", " & NumericUpDown2.Value & ", " & NumericUpDown3.Value & ", " & NumericUpDown4.Value & ", " & NumericUpDown5.Value & ")", Koneksi)
             Perintah.ExecuteNonQuery()
         Else
             If Not TextBox2.Text = id Then
@@ -154,7 +160,7 @@ Public Class editMobil
                 End If
             End If
 
-            Perintah = New MySqlCommand("UPDATE mobil SET nopol='" & TextBox2.Text & "', nama_mobil='" & TextBox3.Text & "', warna='" & TextBox4.Text & "', NIK_supir='" & ComboBox1.SelectedItem & "', kursi_depan=" & NumericUpDown1.Value & ", kursi_2=" & NumericUpDown2.Value & ", kursi_3=" & NumericUpDown3.Value & ", kursi_4=" & NumericUpDown4.Value & " WHERE nopol='" & id & "'", Koneksi)
+            Perintah = New MySqlCommand("UPDATE mobil SET nopol='" & TextBox2.Text & "', nama_mobil='" & TextBox3.Text & "', warna='" & TextBox4.Text & "', NIK_supir='" & ComboBox1.SelectedItem & "', kursi_depan=" & NumericUpDown1.Value & ", kursi_2=" & NumericUpDown2.Value & ", kursi_3=" & NumericUpDown3.Value & ", kursi_4=" & NumericUpDown4.Value & ", kapasitas=" & NumericUpDown5.Value & " WHERE nopol='" & id & "'", Koneksi)
             Perintah.ExecuteNonQuery()
         End If
         Try
